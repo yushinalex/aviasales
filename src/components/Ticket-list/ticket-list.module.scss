@@ -1,0 +1,35 @@
+.ticket-block {
+  display: grid;
+}
+
+.ticket-list {
+  display: grid;
+  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+}
+
+.ticket-list-element {
+  display: block;
+}
+
+.ticket-list-button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: #fff;
+  padding: 15px 30px;
+  line-height: 20px;
+  border: 1px solid #2196f3;
+  background-color: #2196f3;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.list-spinner {
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
