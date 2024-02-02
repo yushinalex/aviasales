@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Alert, Spin } from 'antd';
 import { LoadingOutlined } from '@ant-design/icons';
@@ -10,8 +10,6 @@ import style from './ticket-list.module.scss';
 
 function TicketList() {
   const [current, setCurrent] = useState(5);
-
-  const newId = useRef(1);
 
   const { tickets, loading, error } = useSelector((state) => {
     const { ticketReducer } = state;
@@ -31,7 +29,10 @@ function TicketList() {
   const sorted = sortAndFilter(tickets, option, filters);
 
   const elements = sorted.slice(0, current).map((el) => (
-    <li key={newId.current++} className={style['ticket-list-element']}>
+    <li
+      key={`${el.price}${el.carrier}${el.segments[0].destination}${el.segments[1].date}${el.segments[0].stops.length}`}
+      className={style['ticket-list-element']}
+    >
       <Ticket {...el} />
     </li>
   ));

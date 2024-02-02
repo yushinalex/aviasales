@@ -27,7 +27,7 @@ function Filter() {
   };
 
   const elements = options.map((el) => (
-    <div className={style['filter-item']} key={el.id}>
+    <li className={style['filter-item']} key={el.id}>
       <label className={style['filter-label']}>
         <input
           className={style['filter-input']}
@@ -39,13 +39,13 @@ function Filter() {
         <span className={style['filter-checkbox']} />
         <span className={style['filter-text']}>{el.label}</span>
       </label>
-    </div>
+    </li>
   ));
 
   return (
     <div className={style.filter}>
       <h3 className={style['filter-tittle']}>КОЛИЧЕСТВО ПЕРЕСАДОК</h3>
-      <form className={style['filter-options']}>{elements}</form>
+      <ul className={style['filter-options']}>{elements}</ul>
     </div>
   );
 }

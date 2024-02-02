@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -26,13 +27,25 @@ function Menu() {
     classNames = classNames.join(' ');
 
     return (
-      <button key={el.id} className={classNames} type="button" onClick={() => despatch(getSorted(el.id))}>
-        {el.label}
-      </button>
+      <li key={el.id} className={classNames}>
+        <label>
+          <input
+            className={style['menu-button--radio']}
+            name="option"
+            type="radio"
+            onChange={() => despatch(getSorted(el.id))}
+          />
+          <span className={style['menu-button--text']}>{el.label}</span>
+        </label>
+      </li>
     );
   });
 
-  return <div className={style.menu}>{elements}</div>;
+  return (
+    <div>
+      <ul className={style.menu}>{elements}</ul>
+    </div>
+  );
 }
 
 Menu.propTypes = {};

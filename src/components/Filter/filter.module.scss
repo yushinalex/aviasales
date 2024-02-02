@@ -23,14 +23,19 @@
 .filter-options {
   display: flex;
   flex-direction: column;
-
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
   @media (max-width: 959px) {
   }
 }
 
-.filter-item :hover {
-  background-color: #f1fcff;
-  cursor: pointer;
+.filter-item {
+  display: block;
+  :hover {
+    background-color: #f1fcff;
+    cursor: pointer;
+  }
 }
 
 .filter-label {
